@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gym Website Template</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style1.css">
+  <style>
+    .wow:first-child {
+      visibility: hidden;
+    }
+  </style>
+  
+</head>
+<body>
+ 
+ <!-- Start Header  -->
+ <header>
+ 	 <div class="container">
+ 	 	<div class="logo">
+ 	 		 <a href="">Fitness <span>Club</span></a>
+ 	 	</div>
+ 	 	<a href="javascript:void(0)" class="ham-burger">
+ 	       <span></span>	
+ 	       <span></span>
+ 	 	</a>
+ 	 	<div class="nav">
+ 	 		<ul>
+ 	 			<li><a href="#home">Home</a></li>
+ 	 			<li><a href="#about">About</a></li>
+ 	 			<li><a href="#service">Services</a></li>
+ 	 			<li><a href="#classes">Classes</a></li>
+ 	 			<li><a href="#schedule">Schedule</a></li>
+ 	 			<li><a href="#price">Price</a></li>
+ 	 			<li><a href="#contact">Contact</a></li>
+ 	 		</ul>
+ 	 	</div>
+ 	 </div>
+ </header>
+ <div class="video1">
+    <video src="./video/snow.mp4" autoplay mute loop></video>
+     <div class="regform"><h1> Gym Registration Form</h1></div>
+       <div class="mane">
+        <form>
+           <div id="name">
+               <h2 class="name">Name</h2>
+               <input class="firstname" type="text" name="first_name"><br>
+               <label class="firstlabel">first name</label>
+               <input class="lastname" type="text" name="last_name">
+               <label class="lastlabel">last name</label>
+
+           </div>
+           <h2 class="name">Address</h2>
+           <input class="college" type="text" name="college">
+           <h2 class="name">Phone</h2>
+           <input class="code" type="text" name="area_code">
+           <label class="area-code">Area code</label>
+           <input class="number" type="text" name="phone">
+           <label class="phone-number">Phone Number</label>
+
+           <h2 class="name">Game Options</h2>
+           <select class="option" name="subject">
+               <option disabled="disabled" selected="selected">--Select Gym</option>
+               <option>Roundglass Gympic</option>
+               <option>Danish Fitness</option>
+               <option>Snap Fitness</option>
+               <option>Choose Fitness Lotus</option>
+               <option>Fitness First</option>
+               <option>Centre issue guidlines</option>
+           </select>
+           <h2 id="student">Are you interested?</h2>
+           <label class="radio">
+               <input class="radio-one" type="radio"  name="">
+               <span class="checkmark"></span>
+               Yes
+           </label>
+           <label class="radio">
+             <input class="radio=two" type="radio" name="">
+             <span class="checkmark"></span>
+             No
+             </label><br>
+           <button type="submit">Register</button>
+           <h1 class="end">Don't wish for good body, Work for it.</h1>
+        </form>
+     </div>
+</div>
+
+ <!-- jquery -->
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+	$(document).ready(function(){
+
+      $(".ham-burger, .nav ul li a").click(function(){
+       
+        $(".nav").toggleClass("open")
+
+        $(".ham-burger").toggleClass("active");
+      })      
+      $(".accordian-container").click(function(){
+      	$(".accordian-container").children(".body").slideUp();
+      	$(".accordian-container").removeClass("active")
+      	$(".accordian-container").children(".head").children("span").removeClass("fa-angle-down").addClass("fa-angle-up")
+      	$(this).children(".body").slideDown();
+      	$(this).addClass("active")
+      	$(this).children(".head").children("span").removeClass("fa-angle-up").addClass("fa-angle-down")
+      })
+
+       $(".nav ul li a, .go-down").click(function(event){
+         if(this.hash !== ""){
+
+              event.preventDefault();
+
+              var hash=this.hash; 
+
+              $('html,body').animate({
+                scrollTop:$(hash).offset().top
+              },800 , function(){
+                 window.location.hash=hash;
+              });
+
+              // add active class in navigation
+              $(".nav ul li a").removeClass("active")
+              $(this).addClass("active")
+         }
+      })
+})
+
+</script>
+<script src="js/wow.min.js"></script>
+<script>
+    wow = new WOW(
+      {
+        animateClass: 'animated',
+        offset:       0,
+      }
+    );
+    wow.init();
+  </script>
+
+</body>
+</html
